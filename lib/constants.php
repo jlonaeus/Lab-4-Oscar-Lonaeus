@@ -1,7 +1,7 @@
 <?php
 
 define('DEBUG', false);
-define('DATABASE_NAME', 'JLONAEUS_cs148_lab3');
+define('DATABASE_NAME', 'JLONAEUS_cs148_lab4');
 
 $_SERVER = filter_input_array(INPUT_SERVER, FILTER_SANITIZE_STRING);
 define('SERVER', $_SERVER['SERVER_NAME']);
