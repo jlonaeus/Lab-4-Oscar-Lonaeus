@@ -141,10 +141,10 @@ function verifyAlphaNum($testString){
             //table adopters
             $sql2 = 'INSERT INTO tblAdopter SET ';
             $sql2 .= 'pmkAdopterEmail = ?, ';
-            $sql2 .= 'fldAdopterFirstName = ?, ';
-            $sql2 .= 'fldAdopterLastName = ?, ';
-            $sql2 .= 'fldAgreeToTerms = ?, ';
-            $sql2 .= 'fldJunkMail = ?';
+            $sql2 .= 'fldFirstName = ?, ';
+            $sql2 .= 'fldLastName = ?, ';
+            $sql2 .= 'fldAgreedToTerms = ?, ';
+            $sql2 .= 'fldRecieveCommunication = ?';
 
             $data2 = array();
             $data2[] = $adopterEmail;

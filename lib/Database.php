@@ -2,13 +2,18 @@
 class DataBase{
     public $pdo = '';
 
-    const DB_DEBUG = false;
+    const DB_DEBUG = true;
 
     public function __construct($dataBaseUser, $whichDataBasePassword, $dataBaseName){
         $this->pdo = null;
 
         //include pass.php
-        include 'pass.php';
+        $path = 'lib/';
+
+        if (substr(BASE_PATH, -6) == 'admin/'){
+            $path = '../' . $path;
+        }
+        include $path . 'pass.php';
         $DataBasePassword = '';
 
         switch ($whichDataBasePassword){
@@ -50,9 +55,9 @@ class DataBase{
         $status = false;
         $statement = $this->pdo-> prepare($query);
         if (is_array($values)) {
-            $status->execute($values);
+            $statement->execute($values);
         }else{
-            $status->execute();
+            $statement->execute();
         }
         return $status;
     } 
