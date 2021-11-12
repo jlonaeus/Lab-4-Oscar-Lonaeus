@@ -72,6 +72,7 @@ class DataBase{
         return $status;
     }
 
+
     public function select($query, $values = ''){
         $statement = $this->pdo-> prepare($query);
         if (is_array($values)) {
