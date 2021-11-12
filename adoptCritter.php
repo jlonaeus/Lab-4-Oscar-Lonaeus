@@ -158,6 +158,14 @@ function verifyAlphaNum($testString){
                 print $thisDataBaseReader->displayQuery($sql2, $data2);
             }
             $thisDataBaseWriter->insert($sql2, $data2);
+
+            // for testing the update function
+            $sql3 = 'UPDATE tblWildlife SET fldCommonName = ? WHERE pmkWildlifeId = ?';
+            $data3 = array('Oscar the Grouch', 1);
+            if (DEBUG){
+                print $thisDataBaseReader->displayQuery($sql3, $data3);
+            }
+            $saved = $thisDataBaseWriter->update($sql3, $data3);
         }
     }
     ?>

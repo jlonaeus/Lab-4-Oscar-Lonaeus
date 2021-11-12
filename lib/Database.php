@@ -61,6 +61,16 @@ class DataBase{
         }
         return $status;
     } 
+    public function update($query, $values = ''){
+        $status = false;
+        $statement = $this->pdo-> prepare($query);
+        if (is_array($values)){
+            $statement->execute($values);
+        }else{
+            $statement->execute();
+        }
+        return $status;
+    }
 
     public function select($query, $values = ''){
         $statement = $this->pdo-> prepare($query);
