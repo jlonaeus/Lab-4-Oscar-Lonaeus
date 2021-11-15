@@ -25,7 +25,7 @@
             <div class="dropdown-content">
                 <a href="admin/wildlifeForm.php">Insert New Wildlife</a>
                 <a href="admin/updateList.php?action=u">Update Wildlife</a>
-                <a href="admin/updateList.php?action=d">Delete Wildlife</a>
+                <a href="admin/deleteList.php?action=d">Delete Wildlife</a>
             </div>
         </div>
     </div>
