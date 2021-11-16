@@ -1,5 +1,5 @@
 <?php 
-include 'top.php';
+include '../top.php';
 
 $sql = 'SELECT pmkWildlifeId, fldType, fldCommonName, fldDescription, fldHabitat, fldReproduction, fldDiet, fldManagement, fldStatus, fldMainImage ';
 $sql .= 'FROM tblWildlife ';

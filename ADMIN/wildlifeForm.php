@@ -1,4 +1,6 @@
 <?php
+include '../top.php';
+
 function getData($field){
     if(!isset($_POST[$field])){
         $data = "";
@@ -233,7 +235,7 @@ if(isset($_POST['btnSubmit'])){
     </fieldset>
 
     <fieldset>
-        <p><input type="submit" value="Adopt" tabindex="999" name="btnSubmit"></p>
+        <p><input type="submit" value="Add" tabindex="999" name="btnSubmit"></p>
     </fieldset>
 </form>
 

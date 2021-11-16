@@ -14,4 +14,4 @@ $data = array($critterId);
 $animals = $thisDataBaseReader->select($sql, $data);
 
 ?>
-<h2>Delete a <?php print $critterCommonName; ?></h2>
+<h2>Are you sure you would like to delete a <?php print $critterCommonName; ?></h2>
