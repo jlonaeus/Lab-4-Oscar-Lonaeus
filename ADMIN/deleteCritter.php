@@ -11,7 +11,8 @@ $sql .= 'WHERE pmkWildlifeId = ? ';
 $sql .= 'ORDER BY fldCommonName';
 
 $data = array($critterId);
-$animals = $thisDataBaseReader->select($sql, $data);
+$animals = $thisDataBaseReader->select($sql, $data)[0];
+$critterCommonName = $animals['fldCommonName']
 
 ?>
 <h2>Are you sure you would like to delete a <?php print $critterCommonName; ?></h2>

@@ -11,17 +11,40 @@ function getData($field){
     }
     return $data;
 }
+$critterId = (isset($_GET['cid'])) ? (int) htmlspecialchars($_GET['cid']) : 0;
+if ($critterId != 0){
+    $sql = 'SELECT pmkWildlifeId, fldType, fldCommonName, fldDescription, fldHabitat, fldReproduction, fldDiet, fldManagement, fldStatus, fldMainImage ';
+    $sql .= 'FROM tblWildlife ';
+    $sql .= 'ORDER BY fldCommonName';
 
-$type = '';
-$commonName = '';
-$description = '';
-$habitat = '';
-$reproduction = '';
-$diet = '';
-$management = '';
-$status = '';
-$critterImage = '';
-$saveData = true;
+    $data = array($critterId);
+    $animals = $thisDataBaseReader->select($sql, $data)[0];
+
+    $type = $animals['fldType'];
+    $commonName = $animals['fldCommonName'];
+    $description = $animals['fldDescription'];
+    $habitat = $animals['fldHabitat'];
+    $reproduction = $animals['fldReproduction'];
+    $diet = $animals['fldDiet'];
+    $management = $animals['fldManagement'];
+    $status = $animals['fldStatus'];
+    $critterImage = $animals['fldMainImage'];
+
+}else{
+    $type = '';
+    $commonName = '';
+    $description = '';
+    $habitat = '';
+    $reproduction = '';
+    $diet = '';
+    $management = '';
+    $status = '';
+    $critterImage = '';
+}
+
+
+
+
 
 function verifyAlphaNum($testString){
     return (preg_match ("/^([[:alnum:]]|-|\.| |\'|&|;|#)+$/", $testString));

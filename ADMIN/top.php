@@ -14,10 +14,10 @@
 
 <!-- ************************ INCLUDE lib ************************ -->
 <?php
-include 'lib/constants.php';
+include '../lib/constants.php';
 
 print '<!-- ************************ Connecting to Database ************************ -->';
-require_once(LIB_PATH . '/Database.php');
+require_once('../' . LIB_PATH . '/Database.php');
 
 $thisDataBaseReader = new DataBase('jlonaeus_reader', 'r', DATABASE_NAME);
 $thisDataBaseWriter = new DataBase('jlonaeus_writer', 'w', DATABASE_NAME);
